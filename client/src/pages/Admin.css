@@ -1,0 +1,444 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.admin-page{
+    min-height: 100vh;
+    background: #f4f4f4;
+    padding-bottom: 60px;
+}
+
+/* NAVBAR */
+
+.admin-navbar{
+    background: black;
+    color: white;
+    padding: 22px 45px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.admin-nav-buttons{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.home-btn,
+.products-btn{
+    min-height: 48px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* HOME */
+
+.home-btn{
+    background: white;
+    color: black;
+}
+
+.home-btn:hover{
+    background: #ddd;
+}
+
+/* PRODUCTS */
+
+.products-btn{
+    background: green;
+    color: white;
+}
+
+.products-btn:hover{
+    background: darkgreen;
+}
+
+/* HERO */
+
+.admin-hero{
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(
+        to right,
+        #000000,
+        #434343
+    );
+    color: white;
+}
+
+.admin-hero h1{
+    font-size: 55px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.admin-hero p{
+    font-size: 20px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* FORM */
+
+.admin-form-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0px 20px;
+}
+
+.admin-form{
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-form input{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.admin-form input:focus{
+    border-color: black;
+}
+
+.admin-form button{
+    min-height: 48px;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-form button:hover{
+    background: #333;
+}
+
+/* SEARCH */
+
+.search-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    padding: 0px 20px;
+}
+
+.search-input{
+    width: 100%;
+    max-width: 350px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.search-input:focus{
+    border-color: black;
+}
+
+/* PRODUCTS */
+
+.admin-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 30px;
+}
+
+/* CARD */
+
+.admin-card{
+    width: 100%;
+    max-width: 280px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.admin-card:hover{
+    transform: translateY(-8px);
+}
+
+/* IMAGE */
+
+.admin-image-box{
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.admin-image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.admin-card:hover .admin-image-box img{
+    transform: scale(1.05);
+}
+
+/* DETAILS */
+
+.admin-details{
+    padding: 20px;
+}
+
+.admin-details h3{
+    font-size: 22px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.admin-details p{
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+/* BUTTONS */
+
+.admin-buttons{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn{
+    flex: 1;
+    min-height: 45px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.edit-btn{
+    background: orange;
+}
+
+.edit-btn:hover{
+    background: darkorange;
+}
+
+.delete-btn{
+    background: red;
+}
+
+.delete-btn:hover{
+    background: darkred;
+}
+
+/* LARGE TABLET */
+
+@media screen and (max-width: 992px){
+
+    .admin-navbar{
+        padding: 20px 25px;
+    }
+
+    .admin-hero h1{
+        font-size: 45px;
+    }
+
+    .admin-hero p{
+        font-size: 18px;
+    }
+
+    .admin-products{
+        gap: 25px;
+    }
+}
+
+/* TABLET */
+
+@media screen and (max-width: 768px){
+
+    .admin-navbar{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .admin-nav-buttons{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .admin-hero{
+        padding: 50px 20px;
+    }
+
+    .admin-hero h1{
+        font-size: 38px;
+    }
+
+    .admin-hero p{
+        font-size: 17px;
+    }
+
+    .admin-products{
+        padding: 35px 20px;
+    }
+
+    .admin-card{
+        max-width: 340px;
+    }
+
+    .admin-image-box{
+        height: 320px;
+    }
+
+    .admin-form{
+        padding: 25px;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 480px){
+
+    .admin-navbar{
+        padding: 18px 15px;
+    }
+
+    .home-btn,
+    .products-btn{
+        width: 100%;
+    }
+
+    .admin-hero{
+        padding: 40px 15px;
+    }
+
+    .admin-hero h1{
+        font-size: 32px;
+    }
+
+    .admin-hero p{
+        font-size: 15px;
+    }
+
+    .admin-form{
+        padding: 20px;
+    }
+
+    .admin-form input{
+        font-size: 14px;
+    }
+
+    .admin-form button{
+        font-size: 15px;
+    }
+
+    .search-input{
+        font-size: 14px;
+    }
+
+    .admin-products{
+        padding: 25px 15px;
+    }
+
+    .admin-card{
+        max-width: 100%;
+    }
+
+    .admin-image-box{
+        height: 260px;
+    }
+
+    .admin-details{
+        padding: 18px;
+    }
+
+    .admin-details h3{
+        font-size: 20px;
+    }
+
+    .admin-details p{
+        font-size: 18px;
+    }
+
+    .admin-buttons{
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .delete-btn{
+        width: 100%;
+    }
+}
+
+/* SMALL DEVICES */
+
+@media screen and (max-width: 320px){
+
+    .admin-hero h1{
+        font-size: 28px;
+    }
+
+    .admin-hero p{
+        font-size: 14px;
+    }
+
+    .admin-details h3{
+        font-size: 18px;
+    }
+
+    .admin-details p{
+        font-size: 16px;
+    }
+
+    .admin-form button,
+    .edit-btn,
+    .delete-btn{
+        font-size: 13px;
+    }
+}

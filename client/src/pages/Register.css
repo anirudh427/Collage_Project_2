@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.register-page{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.register-box{
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 18px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.register-heading{
+    margin-bottom: 25px;
+    font-size: 38px;
+    color: black;
+}
+
+.register-input{
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.register-input:focus{
+    border-color: black;
+}
+
+.register-btn{
+    width: 100%;
+    min-height: 48px;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover{
+    background: #333;
+}
+
+.login-text{
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.login-link{
+    margin-left: 5px;
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-link:hover{
+    text-decoration: underline;
+}
+
+.home-link-register{
+    display: inline-block;
+    margin-top: 22px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-link-register:hover{
+    color: #555;
+}
+
+/* TABLET */
+
+@media screen and (max-width: 768px){
+
+    .register-page{
+        padding: 25px 18px;
+    }
+
+    .register-box{
+        max-width: 100%;
+        padding: 30px 25px;
+    }
+
+    .register-heading{
+        font-size: 32px;
+    }
+
+    .register-input{
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .register-btn{
+        font-size: 15px;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 480px){
+
+    .register-page{
+        padding: 20px 15px;
+    }
+
+    .register-box{
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .register-heading{
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .register-input{
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .register-btn{
+        padding: 13px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .login-text{
+        font-size: 14px;
+    }
+
+    .home-link-register{
+        font-size: 14px;
+    }
+}
+
+/* SMALL DEVICES */
+
+@media screen and (max-width: 320px){
+
+    .register-heading{
+        font-size: 24px;
+    }
+
+    .register-box{
+        padding: 20px 15px;
+    }
+
+    .register-input{
+        font-size: 13px;
+    }
+
+    .register-btn{
+        font-size: 13px;
+    }
+}
