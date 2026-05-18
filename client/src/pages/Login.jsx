@@ -110,7 +110,7 @@ function Login() {
             );
 
             alert(
-                "Admin login successful 🔥"
+                "Admin login successful "
             );
 
             navigate("/admin");
@@ -171,10 +171,10 @@ function Login() {
             );
 
             alert(
-                "Login successful 🔥"
+                "Login successful "
             );
 
-            navigate("/home");
+            navigate("/");
 
         } else {
 
@@ -247,7 +247,7 @@ function Login() {
                 </p>
 
                 <Link
-                    to="/home"
+                    to="/"
 
                     className="home-link"
                 >

@@ -128,7 +128,7 @@ function Admin() {
     } else {
 
       alert(
-        "Product Added 🔥"
+        "Product Added "
       );
 
       setName("");
@@ -187,7 +187,7 @@ function Admin() {
     } else {
 
       alert(
-        "Product Updated 🔥"
+        "Product Updated "
       );
 
       setEditingId(null);
@@ -222,7 +222,7 @@ function Admin() {
           <button
             className="home-btn"
             onClick={() =>
-              navigate("/home")
+              navigate("/")
             }
           >
             Home

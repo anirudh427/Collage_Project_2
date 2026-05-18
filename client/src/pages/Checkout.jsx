@@ -308,7 +308,7 @@ Subtotal: ₹${
                 setLoading(false);
 
                 alert(
-                    `Payment Successful 🔥
+                    `Payment Successful 
 Payment ID:
 ${response.razorpay_payment_id}`
                 );
@@ -359,7 +359,7 @@ ${response.razorpay_payment_id}`
                 setLoading(false);
 
                 alert(
-                    "Payment Failed ❌"
+                    "Payment Failed "
                 );
             }
         );

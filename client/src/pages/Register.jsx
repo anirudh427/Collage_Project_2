@@ -209,7 +209,7 @@ function Register() {
         } else {
 
             alert(
-                "Registration Successful 🔥"
+                "Registration Successful "
             );
 
             navigate("/login");
@@ -311,7 +311,7 @@ function Register() {
                 </p>
 
                 <Link
-                    to="/home"
+                    to="/"
 
                     className="home-link-register"
                 >
