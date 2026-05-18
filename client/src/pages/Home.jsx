@@ -160,16 +160,18 @@ function Home() {
                     <h1 className="heading-home">
 
                         Welcome To
-                        Tote bag Store 🔥
+                        Bagistry 
 
                     </h1>
 
                     <p className="para-home">
 
                         Discover trending
-                        fashion, gadgets,
-                        accessories and
-                        premium products
+                        fashion cloth bags,
+                        keychains and
+                        pouches at Bagistry.
+                        We are committed to
+                        providing you
                         with the best
                         shopping experience.
 
