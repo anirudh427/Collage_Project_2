@@ -1,7 +1,24 @@
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* GLOBAL */
+
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fb;
+    color: #111;
 }
 
 img{
@@ -9,170 +26,225 @@ img{
     display: block;
 }
 
-body{
-    overflow-x: hidden;
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
 .home-page{
     min-height: 100vh;
-    background: #f5f5f5;
+    background:
+    radial-gradient(circle at top left, rgba(0,255,170,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0,140,255,0.08), transparent 30%),
+    #f4f7fb;
 }
 
-/* NAVBAR */
+/* =========================
+        NAVBAR
+========================= */
 
 .navbar-home{
-    background: black;
-    color: white;
-    padding: 22px 45px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+
+    padding: 18px 50px;
+
+    background: rgba(10,10,10,0.75);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
 }
 
 .logo-home{
-    font-size: 34px;
-    font-weight: bold;
-    word-break: break-word;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg,#00ff99,#00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-buttons-home{
     display: flex;
-    gap: 15px;
+    gap: 14px;
     flex-wrap: wrap;
     align-items: center;
 }
+
+/* NAV BUTTONS */
 
 .nav-btn,
 .products-btn-home,
 .logout-btn,
 .cart-btn-home-nav,
 .admin-btn-home{
-    min-height: 48px;
-    padding: 12px 22px;
     border: none;
-    border-radius: 10px;
+    outline: none;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
+
+    min-height: 48px;
+    padding: 12px 24px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: all 0.35s ease;
+
+    position: relative;
+    overflow: hidden;
 }
 
-/* REGISTER + LOGIN */
+/* BUTTON GLOW EFFECT */
+
+.nav-btn::before,
+.products-btn-home::before,
+.logout-btn::before,
+.cart-btn-home-nav::before,
+.admin-btn-home::before,
+.shop-btn-home::before,
+.cart-btn-home::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.nav-btn:hover::before,
+.products-btn-home:hover::before,
+.logout-btn:hover::before,
+.cart-btn-home-nav:hover::before,
+.admin-btn-home:hover::before,
+.shop-btn-home:hover::before,
+.cart-btn-home:hover::before{
+    transform: translateX(100%);
+}
+
+/* INDIVIDUAL BUTTONS */
 
 .nav-btn{
     background: white;
-    color: black;
+    color: #111;
 }
 
 .nav-btn:hover{
-    background: #ddd;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
 }
 
-/* PRODUCTS */
-
 .products-btn-home{
-    background: green;
+    background: linear-gradient(135deg,#00c853,#00e676);
     color: white;
 }
 
 .products-btn-home:hover{
-    background: darkgreen;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,200,83,0.4);
 }
 
-/* CART */
-
 .cart-btn-home-nav{
-    background: orange;
+    background: linear-gradient(135deg,#ff9800,#ff5722);
     color: white;
 }
 
 .cart-btn-home-nav:hover{
-    background: darkorange;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,152,0,0.4);
 }
 
-/* ADMIN */
-
 .admin-btn-home{
-    background: blue;
+    background: linear-gradient(135deg,#2962ff,#00b0ff);
     color: white;
 }
 
 .admin-btn-home:hover{
-    background: darkblue;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(41,98,255,0.4);
 }
 
-/* LOGOUT */
-
 .logout-btn{
-    background: red;
+    background: linear-gradient(135deg,#ff1744,#ff5252);
     color: white;
 }
 
 .logout-btn:hover{
-    background: darkred;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,23,68,0.4);
 }
-
-/* USER */
 
 .welcome-user{
-    display: flex;
-    align-items: center;
     color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
 }
 
-/* HERO */
+/* =========================
+          HERO
+========================= */
 
 .hero-home{
+    min-height: 92vh;
 
-    min-height: 85vh;
+    display: flex;
+    align-items: center;
+
+    padding: 90px;
+
+    color: white;
 
     background:
     linear-gradient(
-        to right,
-        rgba(0,0,0,0.75),
+        120deg,
+        rgba(0,0,0,0.85),
         rgba(0,0,0,0.45)
     ),
     url("https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=1470&auto=format&fit=crop");
 
     background-size: cover;
-
     background-position: center;
 
-    background-repeat: no-repeat;
+    position: relative;
 
-    display: flex;
-
-    align-items: center;
-
-    padding: 80px;
-
-    color: white;
-
-    animation: heroSlider 12s infinite;
+    animation: heroSlider 14s infinite ease-in-out;
 }
 
-/* HERO SLIDER */
+.hero-home::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(0,255,170,0.15),
+    transparent 25%);
+
+    pointer-events: none;
+}
 
 @keyframes heroSlider{
 
     0%{
         background:
         linear-gradient(
-            to right,
-            rgba(0,0,0,0.75),
+            120deg,
+            rgba(0,0,0,0.85),
             rgba(0,0,0,0.45)
         ),
         url("https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=1470&auto=format&fit=crop");
-
         background-size: cover;
         background-position: center;
     }
@@ -180,12 +252,11 @@ body{
     50%{
         background:
         linear-gradient(
-            to right,
-            rgba(0,0,0,0.75),
+            120deg,
+            rgba(0,0,0,0.85),
             rgba(0,0,0,0.45)
         ),
         url("https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=1470&auto=format&fit=crop");
-
         background-size: cover;
         background-position: center;
     }
@@ -193,33 +264,45 @@ body{
     100%{
         background:
         linear-gradient(
-            to right,
-            rgba(0,0,0,0.75),
+            120deg,
+            rgba(0,0,0,0.85),
             rgba(0,0,0,0.45)
         ),
         url("https://images.unsplash.com/photo-1614179689702-355944cd0918?q=80&w=1470&auto=format&fit=crop");
-
         background-size: cover;
         background-position: center;
     }
 }
 
 .hero-content{
-    max-width: 650px;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
 }
 
 .heading-home{
-    font-size: 70px;
-    line-height: 1.1;
-    margin-bottom: 25px;
-    word-break: break-word;
+    font-size: 76px;
+    line-height: 1.05;
+    font-weight: 800;
+
+    margin-bottom: 28px;
+
+    text-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.heading-home span{
+    background: linear-gradient(90deg,#00ff99,#00c3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .para-home{
     font-size: 22px;
-    color: #ddd;
-    margin-bottom: 35px;
-    line-height: 1.6;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.82);
+
+    margin-bottom: 40px;
 }
 
 .hero-buttons{
@@ -230,99 +313,131 @@ body{
 
 .shop-btn-home,
 .cart-btn-home{
-    min-height: 50px;
-    padding: 16px 35px;
     border: none;
-    border-radius: 12px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
+
+    padding: 17px 34px;
+    min-height: 54px;
+
+    border-radius: 16px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    transition: all 0.35s ease;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .shop-btn-home{
-    background: green;
+    background: linear-gradient(135deg,#00c853,#00e676);
     color: white;
+
+    box-shadow: 0 10px 30px rgba(0,200,83,0.35);
 }
 
 .shop-btn-home:hover{
-    background: darkgreen;
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.03);
 }
 
 .cart-btn-home{
-    background: white;
-    color: black;
+    background: rgba(255,255,255,0.12);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
 }
 
 .cart-btn-home:hover{
-    background: #ddd;
-    transform: scale(1.05);
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
 }
 
-/* FEATURES */
+/* =========================
+        FEATURES
+========================= */
 
 .features-section{
+    padding: 90px 40px;
+
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 70px 40px;
     flex-wrap: wrap;
 }
 
 .feature-card{
-    width: 300px;
-    background: white;
-    padding: 35px 25px;
-    border-radius: 18px;
+    width: 320px;
+
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    padding: 40px 28px;
+
+    border-radius: 26px;
+
     text-align: center;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
-    transition: 0.3s;
+
+    transition: all 0.4s ease;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.08);
 }
 
 .feature-card:hover{
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.03);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15);
 }
 
 .feature-card h2{
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-size: 55px;
+    margin-bottom: 18px;
 }
 
 .feature-card h3{
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .feature-card p{
-    color: gray;
-    line-height: 1.6;
+    color: #666;
+    line-height: 1.8;
+    font-size: 15px;
 }
 
-/* LARGE TABLET */
+/* =========================
+        TABLET
+========================= */
 
 @media screen and (max-width: 992px){
 
+    .hero-home{
+        padding: 70px 40px;
+    }
+
     .heading-home{
-        font-size: 55px;
+        font-size: 58px;
     }
 
     .para-home{
         font-size: 20px;
     }
-
-    .hero-home{
-        padding: 60px 40px;
-    }
 }
 
-/* TABLET */
+/* =========================
+        MOBILE
+========================= */
 
 @media screen and (max-width: 768px){
 
     .navbar-home{
         flex-direction: column;
-        gap: 20px;
         padding: 20px;
         text-align: center;
     }
@@ -333,10 +448,10 @@ body{
     }
 
     .hero-home{
-        padding: 40px 20px;
+        padding: 60px 22px;
         justify-content: center;
         text-align: center;
-        min-height: 80vh;
+        min-height: 85vh;
     }
 
     .hero-content{
@@ -344,7 +459,7 @@ body{
     }
 
     .heading-home{
-        font-size: 42px;
+        font-size: 46px;
     }
 
     .para-home{
@@ -358,29 +473,31 @@ body{
 
     .shop-btn-home,
     .cart-btn-home{
-        width: 220px;
+        width: 230px;
     }
 
     .features-section{
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
 
     .feature-card{
         width: 100%;
-        max-width: 350px;
+        max-width: 360px;
     }
 }
 
-/* MOBILE */
+/* =========================
+      SMALL MOBILE
+========================= */
 
 @media screen and (max-width: 480px){
 
     .logo-home{
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .heading-home{
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .para-home{
@@ -395,39 +512,28 @@ body{
         width: 100%;
     }
 
-    .hero-home{
-        min-height: 75vh;
-        padding: 30px 15px;
-    }
-
     .shop-btn-home,
     .cart-btn-home{
         width: 100%;
     }
 
+    .hero-home{
+        padding: 40px 18px;
+    }
+
     .feature-card{
-        padding: 28px 20px;
-    }
-
-    .feature-card h2{
-        font-size: 42px;
-    }
-
-    .feature-card h3{
-        font-size: 21px;
+        padding: 32px 22px;
     }
 }
 
-/* SMALL DEVICES */
+/* =========================
+       EXTRA SMALL
+========================= */
 
 @media screen and (max-width: 320px){
 
-    .logo-home{
-        font-size: 24px;
-    }
-
     .heading-home{
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .para-home{
@@ -435,14 +541,10 @@ body{
     }
 
     .feature-card h2{
-        font-size: 36px;
+        font-size: 42px;
     }
 
     .feature-card h3{
-        font-size: 18px;
-    }
-
-    .feature-card p{
-        font-size: 14px;
+        font-size: 20px;
     }
 }

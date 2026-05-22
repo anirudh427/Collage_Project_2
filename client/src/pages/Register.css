@@ -1,100 +1,299 @@
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* GLOBAL */
+
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+      REGISTER PAGE
+========================= */
 
 .register-page{
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f5f5f5;
+
     padding: 20px;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(0,255,170,0.12),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(0,140,255,0.12),
+    transparent 30%),
+
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
+
+    position: relative;
+    overflow: hidden;
 }
+
+/* BACKGROUND GLOW */
+
+.register-page::before,
+.register-page::after{
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.35;
+}
+
+.register-page::before{
+    background: #00ff99;
+    top: -100px;
+    left: -100px;
+}
+
+.register-page::after{
+    background: #00bfff;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* =========================
+       REGISTER BOX
+========================= */
 
 .register-box{
     width: 100%;
-    max-width: 400px;
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 18px rgba(0,0,0,0.1);
+    max-width: 430px;
+
+    padding: 42px 35px;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.35);
+
     text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    animation: fadeUp 0.8s ease;
 }
 
-.register-heading{
-    margin-bottom: 25px;
-    font-size: 38px;
-    color: black;
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+/* =========================
+         HEADING
+========================= */
+
+.register-heading{
+    font-size: 42px;
+    font-weight: 700;
+
+    margin-bottom: 30px;
+
+    color: white;
+
+    letter-spacing: 1px;
+}
+
+.register-heading span{
+    background: linear-gradient(
+        90deg,
+        #00ff99,
+        #00c3ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+          INPUTS
+========================= */
 
 .register-input{
     width: 100%;
-    padding: 14px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+
+    padding: 15px 18px;
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
     font-size: 15px;
-    outline: none;
-    transition: 0.3s;
     font-family: inherit;
+
+    outline: none;
+
+    transition: all 0.35s ease;
+}
+
+.register-input::placeholder{
+    color: rgba(255,255,255,0.6);
 }
 
 .register-input:focus{
-    border-color: black;
+    border-color: #00ff99;
+
+    background: rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 0 0 4px rgba(0,255,153,0.15);
 }
+
+/* =========================
+          BUTTON
+========================= */
 
 .register-btn{
     width: 100%;
-    min-height: 48px;
-    padding: 14px;
+
+    min-height: 52px;
+
     border: none;
-    background: black;
-    color: white;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #00c853,
+        #00e676
+    );
+
+    transition: all 0.35s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* BUTTON SHINE */
+
+.register-btn::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.register-btn:hover::before{
+    transform: translateX(100%);
 }
 
 .register-btn:hover{
-    background: #333;
+    transform: translateY(-4px);
+
+    box-shadow:
+    0 12px 30px rgba(0,255,153,0.35);
 }
 
+/* =========================
+           TEXTS
+========================= */
+
 .login-text{
-    margin-top: 22px;
+    margin-top: 24px;
+
+    color: rgba(255,255,255,0.8);
+
     font-size: 15px;
-    line-height: 1.5;
+
+    line-height: 1.6;
 }
 
 .login-link{
-    margin-left: 5px;
+    color: #00ff99;
+
     text-decoration: none;
-    color: blue;
-    font-weight: bold;
+
+    font-weight: 600;
+
     transition: 0.3s;
 }
 
 .login-link:hover{
+    color: #00c3ff;
     text-decoration: underline;
 }
 
 .home-link-register{
     display: inline-block;
+
     margin-top: 22px;
+
+    color: rgba(255,255,255,0.9);
+
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+
+    font-weight: 600;
+
     transition: 0.3s;
 }
 
 .home-link-register:hover{
-    color: #555;
+    color: #00ff99;
 }
 
-/* TABLET */
+/* =========================
+          TABLET
+========================= */
 
 @media screen and (max-width: 768px){
 
@@ -104,24 +303,21 @@
 
     .register-box{
         max-width: 100%;
-        padding: 30px 25px;
+        padding: 35px 28px;
     }
 
     .register-heading{
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .register-input{
-        padding: 13px;
-        font-size: 15px;
-    }
-
-    .register-btn{
-        font-size: 15px;
+        padding: 14px 16px;
     }
 }
 
-/* MOBILE */
+/* =========================
+           MOBILE
+========================= */
 
 @media screen and (max-width: 480px){
 
@@ -130,46 +326,44 @@
     }
 
     .register-box{
-        padding: 25px 20px;
-        border-radius: 12px;
+        padding: 30px 22px;
+        border-radius: 22px;
     }
 
     .register-heading{
-        font-size: 28px;
-        margin-bottom: 20px;
+        font-size: 30px;
+        margin-bottom: 24px;
     }
 
     .register-input{
-        padding: 12px;
         font-size: 14px;
-        margin-bottom: 14px;
+        padding: 13px 15px;
+        margin-bottom: 16px;
     }
 
     .register-btn{
-        padding: 13px;
-        font-size: 14px;
-        border-radius: 8px;
+        font-size: 15px;
+        min-height: 48px;
     }
 
-    .login-text{
-        font-size: 14px;
-    }
-
+    .login-text,
     .home-link-register{
         font-size: 14px;
     }
 }
 
-/* SMALL DEVICES */
+/* =========================
+        SMALL DEVICES
+========================= */
 
 @media screen and (max-width: 320px){
 
     .register-heading{
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .register-box{
-        padding: 20px 15px;
+        padding: 25px 18px;
     }
 
     .register-input{
