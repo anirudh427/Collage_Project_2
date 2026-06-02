@@ -77,7 +77,6 @@ function Login() {
 
     return (
         <div className="login-page">
-            {/* Ambient Animated Background Blobs */}
             <div className="bg-blob blob-1"></div>
             <div className="bg-blob blob-2"></div>
             <div className="bg-blob blob-3"></div>
