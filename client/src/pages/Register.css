@@ -1,16 +1,14 @@
 /* GOOGLE FONT */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* GLOBAL */
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
@@ -18,359 +16,424 @@ body{
 /* =========================
       REGISTER PAGE
 ========================= */
-
-.register-page{
+.register-page {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 20px;
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(0,255,170,0.12),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(0,140,255,0.12),
-    transparent 30%),
-
-    linear-gradient(
-        135deg,
-        #0f172a,
-        #111827,
-        #1e293b
-    );
-
+    padding: 40px 20px;
+    background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 1) 0%, rgba(9, 13, 26, 1) 90%);
     position: relative;
     overflow: hidden;
 }
 
-/* BACKGROUND GLOW */
-
-.register-page::before,
-.register-page::after{
-    content: "";
+/* AMBIENT BACKGROUND GLOW BLOBS */
+.reg-bg-blob {
     position: absolute;
-
-    width: 350px;
-    height: 350px;
-
     border-radius: 50%;
-
-    filter: blur(90px);
-
-    opacity: 0.35;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.register-page::before{
+.blob-1 {
+    width: 450px;
+    height: 450px;
     background: #00ff99;
     top: -100px;
     left: -100px;
+    animation: float-1 20s infinite alternate ease-in-out;
 }
 
-.register-page::after{
+.blob-2 {
+    width: 500px;
+    height: 500px;
     background: #00bfff;
-    bottom: -100px;
-    right: -100px;
+    bottom: -150px;
+    right: -150px;
+    animation: float-2 25s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    background: #7c3aed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float-3 30s infinite alternate ease-in-out;
+}
+
+@keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 60px) scale(1.15); }
+}
+
+@keyframes float-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-120px, -80px) scale(1.2); }
+}
+
+@keyframes float-3 {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-30%, -30%) scale(1.1); }
 }
 
 /* =========================
-       REGISTER BOX
+       REGISTER BOX (CARD)
 ========================= */
-
-.register-box{
+.register-box {
     width: 100%;
-    max-width: 430px;
-
-    padding: 42px 35px;
-
-    border-radius: 28px;
-
-    background: rgba(255,255,255,0.08);
-
-    backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,0.35);
-
+    max-width: 460px;
+    padding: 45px 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     text-align: center;
-
     position: relative;
     z-index: 2;
-
-    animation: fadeUp 0.8s ease;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeUp{
-
-    from{
+@keyframes fadeUp {
+    from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
-
-    to{
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 /* =========================
-         HEADING
+         HEADING & DESCRIPTION
 ========================= */
-
-.register-heading{
-    font-size: 42px;
+.register-heading {
+    font-size: 38px;
     font-weight: 700;
-
-    margin-bottom: 30px;
-
-    color: white;
-
-    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
 }
 
-.register-heading span{
-    background: linear-gradient(
-        90deg,
-        #00ff99,
-        #00c3ff
-    );
-
+.register-heading span {
+    background: linear-gradient(90deg, #00ff99, #00c3ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.register-subheading {
+    font-size: 15px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
 /* =========================
-          INPUTS
+    FORM & INPUT GROUPS
 ========================= */
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
 
-.register-input{
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #a5b4fc;
+    margin-bottom: 6px;
+    margin-left: 4px;
+    transition: color 0.3s ease;
+}
+
+/* SVG ICON WRAPPER */
+.input-wrapper {
+    position: relative;
     width: 100%;
+}
 
-    padding: 15px 18px;
-    margin-bottom: 18px;
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
 
-    border-radius: 14px;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    background: rgba(255,255,255,0.08);
-
-    color: white;
-
-    font-size: 15px;
+.register-input {
+    width: 100%;
+    padding: 15px 18px 15px 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f8fafc;
+    font-size: 14.5px;
     font-family: inherit;
-
     outline: none;
-
-    transition: all 0.35s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.register-input::placeholder{
-    color: rgba(255,255,255,0.6);
+.register-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
 }
 
-.register-input:focus{
+/* INPUT HOVER & FOCUS STATES */
+.register-input:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.register-input:focus {
     border-color: #00ff99;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 0 0 4px rgba(0, 255, 153, 0.12),
+        0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
-    background: rgba(255,255,255,0.12);
+/* FOCUS COLOR TRIGGER FOR LABELS & ICONS */
+.input-wrapper:focus-within .input-icon {
+    color: #00ff99;
+}
 
-    box-shadow:
-    0 0 0 4px rgba(0,255,153,0.15);
+.input-group:focus-within label {
+    color: #00ff99;
 }
 
 /* =========================
           BUTTON
 ========================= */
-
-.register-btn{
+.register-btn {
     width: 100%;
-
     min-height: 52px;
-
     border: none;
     cursor: pointer;
-
-    border-radius: 14px;
-
+    border-radius: 12px;
     font-size: 16px;
     font-weight: 700;
-
-    color: white;
-
-    background: linear-gradient(
-        135deg,
-        #00c853,
-        #00e676
-    );
-
-    transition: all 0.35s ease;
-
+    color: #090d1a;
+    background: linear-gradient(135deg, #00f58d 0%, #00b2fe 100%);
+    box-shadow: 0 4px 25px rgba(0, 245, 141, 0.25);
+    margin-top: 10px;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* BUTTON SHINE */
-
-.register-btn::before{
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0.35),
-        transparent
-    );
-
-    transform: translateX(-100%);
-    transition: 0.5s;
+/* BUTTON HOVER & ACTIVE States */
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 245, 141, 0.4);
+    filter: brightness(1.08);
 }
 
-.register-btn:hover::before{
-    transform: translateX(100%);
+.register-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 15px rgba(0, 245, 141, 0.2);
 }
 
-.register-btn:hover{
-    transform: translateY(-4px);
+.register-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: none;
+}
 
-    box-shadow:
-    0 12px 30px rgba(0,255,153,0.35);
+/* BUTTON SPINNER & ALIGNMENT */
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(9, 13, 26, 0.2);
+    border-top-color: #090d1a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* =========================
            TEXTS
 ========================= */
-
-.login-text{
+.login-text {
     margin-top: 24px;
-
-    color: rgba(255,255,255,0.8);
-
-    font-size: 15px;
-
+    color: #94a3b8;
+    font-size: 14.5px;
+    font-weight: 400;
     line-height: 1.6;
 }
 
-.login-link{
+.login-link {
     color: #00ff99;
-
     text-decoration: none;
-
     font-weight: 600;
-
-    transition: 0.3s;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
 }
 
-.login-link:hover{
+.login-link:hover {
     color: #00c3ff;
-    text-decoration: underline;
 }
 
-.home-link-register{
+.login-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #00c3ff;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.login-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.home-link-register {
     display: inline-block;
-
-    margin-top: 22px;
-
-    color: rgba(255,255,255,0.9);
-
+    margin-top: 20px;
+    color: #64748b;
     text-decoration: none;
-
+    font-size: 14px;
     font-weight: 600;
-
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.home-link-register:hover{
-    color: #00ff99;
+.home-link-register .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.home-link-register:hover {
+    color: #f8fafc;
+}
+
+.home-link-register:hover .arrow {
+    transform: translateX(-4px);
 }
 
 /* =========================
           TABLET
 ========================= */
-
-@media screen and (max-width: 768px){
-
-    .register-page{
-        padding: 25px 18px;
+@media screen and (max-width: 768px) {
+    .register-page {
+        padding: 30px 20px;
     }
 
-    .register-box{
+    .register-box {
         max-width: 100%;
-        padding: 35px 28px;
+        padding: 40px 30px;
     }
 
-    .register-heading{
-        font-size: 36px;
+    .register-heading {
+        font-size: 34px;
     }
 
-    .register-input{
-        padding: 14px 16px;
+    .register-input {
+        padding: 14px 16px 14px 44px;
+        font-size: 14px;
     }
 }
 
 /* =========================
            MOBILE
 ========================= */
-
-@media screen and (max-width: 480px){
-
-    .register-page{
-        padding: 20px 15px;
+@media screen and (max-width: 480px) {
+    .register-page {
+        padding: 20px 16px;
     }
 
-    .register-box{
-        padding: 30px 22px;
-        border-radius: 22px;
+    .register-box {
+        padding: 35px 24px;
+        border-radius: 20px;
     }
 
-    .register-heading{
-        font-size: 30px;
+    .register-heading {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .register-subheading {
+        font-size: 14px;
         margin-bottom: 24px;
     }
 
-    .register-input{
+    .register-input {
         font-size: 14px;
-        padding: 13px 15px;
-        margin-bottom: 16px;
+        padding: 13px 15px 13px 42px;
     }
 
-    .register-btn{
+    .input-icon {
+        left: 14px;
+    }
+
+    .register-btn {
         font-size: 15px;
         min-height: 48px;
     }
 
     .login-text,
-    .home-link-register{
-        font-size: 14px;
+    .home-link-register {
+        font-size: 13.5px;
     }
 }
 
 /* =========================
         SMALL DEVICES
 ========================= */
-
-@media screen and (max-width: 320px){
-
-    .register-heading{
-        font-size: 26px;
+@media screen and (max-width: 320px) {
+    .register-box {
+        padding: 30px 18px;
     }
 
-    .register-box{
-        padding: 25px 18px;
+    .register-heading {
+        font-size: 24px;
     }
 
-    .register-input{
+    .register-input {
         font-size: 13px;
+        padding: 12px 12px 12px 38px;
     }
 
-    .register-btn{
-        font-size: 13px;
+    .input-icon {
+        left: 12px;
     }
 }
