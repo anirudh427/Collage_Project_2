@@ -1,7 +1,5 @@
-/* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* GLOBAL RESET & BASICS */
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-        LOGIN PAGE CONTAINER
-========================================= */
 .login-page {
     min-height: 100vh;
     display: flex;
@@ -27,9 +22,6 @@ body {
     overflow: hidden;
 }
 
-/* =========================================
-   AMBIENT ANIMATED GLOW BLOBS (GLASSMORPHISM)
-========================================= */
 .bg-blob {
     position: absolute;
     border-radius: 50%;
@@ -82,9 +74,6 @@ body {
     100% { transform: translate(-30%, -30%) scale(1.1); }
 }
 
-/* =========================================
-        LOGIN CARD (BOX)
-========================================= */
 .login-box {
     width: 100%;
     max-width: 440px;
@@ -114,9 +103,6 @@ body {
     }
 }
 
-/* =========================================
-        HEADINGS & TEXTS
-========================================= */
 .login-heading {
     font-size: 38px;
     font-weight: 700;
@@ -139,9 +125,6 @@ body {
     font-weight: 400;
 }
 
-/* =========================================
-        FORM & INPUT GROUPS
-========================================= */
 .login-form {
     display: flex;
     flex-direction: column;
@@ -165,7 +148,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* SVG ICON WRAPPER */
 .input-wrapper {
     position: relative;
     width: 100%;
@@ -201,7 +183,6 @@ body {
     color: rgba(255, 255, 255, 0.35);
 }
 
-/* INPUT FOCUS STATES */
 .login-input:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.2);
@@ -215,7 +196,6 @@ body {
         0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* FOCUS COLOR TRIGGER FOR LABELS & ICONS */
 .input-wrapper:focus-within .input-icon {
     color: #00ff99;
 }
@@ -224,9 +204,6 @@ body {
     color: #00ff99;
 }
 
-/* =========================================
-        SUBMIT BUTTON
-========================================= */
 .login-btn {
     width: 100%;
     min-height: 52px;
@@ -244,7 +221,6 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* BUTTON HOVER & ACTIVE */
 .login-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 245, 141, 0.4);
@@ -264,7 +240,6 @@ body {
     filter: none;
 }
 
-/* BUTTON SPINNER & ALIGNMENT */
 .btn-content {
     display: flex;
     align-items: center;
@@ -287,9 +262,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* =========================================
-        FOOTER LINKS
-========================================= */
 .login-footer {
     margin-top: 28px;
     display: flex;
@@ -357,11 +329,6 @@ body {
     transform: translateX(-4px);
 }
 
-/* =========================================
-        MEDIA QUERY RESPONSIVENESS
-========================================= */
-
-/* TABLET AND SMALL LAPTOPS */
 @media screen and (max-width: 768px) {
     .login-page {
         padding: 30px 20px;
@@ -381,7 +348,6 @@ body {
     }
 }
 
-/* SMARTPHONES (PORTRAIT) */
 @media screen and (max-width: 480px) {
     .login-page {
         padding: 20px 16px;
@@ -422,7 +388,6 @@ body {
     }
 }
 
-/* EXTRA SMALL DEVICES */
 @media screen and (max-width: 320px) {
     .login-box {
         padding: 30px 18px;

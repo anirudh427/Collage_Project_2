@@ -1,7 +1,5 @@
-/* GOOGLE FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-      REGISTER PAGE
-========================= */
 .register-page {
     min-height: 100vh;
     display: flex;
@@ -27,7 +22,6 @@ body {
     overflow: hidden;
 }
 
-/* AMBIENT BACKGROUND GLOW BLOBS */
 .reg-bg-blob {
     position: absolute;
     border-radius: 50%;
@@ -80,9 +74,6 @@ body {
     100% { transform: translate(-30%, -30%) scale(1.1); }
 }
 
-/* =========================
-       REGISTER BOX (CARD)
-========================= */
 .register-box {
     width: 100%;
     max-width: 460px;
@@ -112,9 +103,6 @@ body {
     }
 }
 
-/* =========================
-         HEADING & DESCRIPTION
-========================= */
 .register-heading {
     font-size: 38px;
     font-weight: 700;
@@ -137,9 +125,6 @@ body {
     font-weight: 400;
 }
 
-/* =========================
-    FORM & INPUT GROUPS
-========================= */
 .register-form {
     display: flex;
     flex-direction: column;
@@ -163,7 +148,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* SVG ICON WRAPPER */
 .input-wrapper {
     position: relative;
     width: 100%;
@@ -199,7 +183,6 @@ body {
     color: rgba(255, 255, 255, 0.35);
 }
 
-/* INPUT HOVER & FOCUS STATES */
 .register-input:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.2);
@@ -213,7 +196,6 @@ body {
         0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* FOCUS COLOR TRIGGER FOR LABELS & ICONS */
 .input-wrapper:focus-within .input-icon {
     color: #00ff99;
 }
@@ -222,9 +204,6 @@ body {
     color: #00ff99;
 }
 
-/* =========================
-          BUTTON
-========================= */
 .register-btn {
     width: 100%;
     min-height: 52px;
@@ -242,7 +221,6 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* BUTTON HOVER & ACTIVE States */
 .register-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 245, 141, 0.4);
@@ -262,7 +240,6 @@ body {
     filter: none;
 }
 
-/* BUTTON SPINNER & ALIGNMENT */
 .btn-content {
     display: flex;
     align-items: center;
@@ -285,9 +262,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* =========================
-           TEXTS
-========================= */
 .login-text {
     margin-top: 24px;
     color: #94a3b8;
@@ -350,9 +324,6 @@ body {
     transform: translateX(-4px);
 }
 
-/* =========================
-          TABLET
-========================= */
 @media screen and (max-width: 768px) {
     .register-page {
         padding: 30px 20px;
@@ -373,9 +344,6 @@ body {
     }
 }
 
-/* =========================
-           MOBILE
-========================= */
 @media screen and (max-width: 480px) {
     .register-page {
         padding: 20px 16px;
@@ -416,9 +384,6 @@ body {
     }
 }
 
-/* =========================
-        SMALL DEVICES
-========================= */
 @media screen and (max-width: 320px) {
     .register-box {
         padding: 30px 18px;

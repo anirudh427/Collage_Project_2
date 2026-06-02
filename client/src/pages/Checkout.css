@@ -1,391 +1,396 @@
 /* GOOGLE FONT */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* GLOBAL */
-
-*{
+/* =========================================
+   SCOPED RESET (PREVENTS INTERFERENCE WITH OTHER PAGES)
+========================================= */
+.checkout-page * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    background: #f4f7fb;
-}
-
-/* =========================
-        CHECKOUT PAGE
-========================= */
-
-.checkout-page{
+/* =========================================
+        CHECKOUT PAGE CONTAINER
+========================================= */
+.checkout-page {
     min-height: 100vh;
-
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 1) 0%, rgba(9, 13, 26, 1) 90%);
+    color: #f8fafc;
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 60px 20px;
-
-    background:
-    radial-gradient(circle at top left,
-    rgba(0,255,170,0.08),
-    transparent 30%),
-
-    radial-gradient(circle at bottom right,
-    rgba(0,140,255,0.08),
-    transparent 30%),
-
-    linear-gradient(
-        135deg,
-        #eef2ff,
-        #f8fafc
-    );
+    position: relative;
+    overflow: hidden;
 }
 
-/* =========================
-        CHECKOUT BOX
-========================= */
+/* =========================================
+   AMBIENT BACKGROUND GLOW BLOBS
+========================================= */
+.checkout-bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+}
 
-.checkout-box{
+.checkout-page .blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #00ff99;
+    top: -150px;
+    left: -150px;
+    animation: float-1 20s infinite alternate ease-in-out;
+}
+
+.checkout-page .blob-2 {
+    width: 600px;
+    height: 600px;
+    background: #00bfff;
+    bottom: -200px;
+    right: -200px;
+    animation: float-2 25s infinite alternate ease-in-out;
+}
+
+.checkout-page .blob-3 {
+    width: 400px;
+    height: 400px;
+    background: #7c3aed;
+    top: 40%;
+    left: 80%;
+    opacity: 0.08;
+    animation: float-3 30s infinite alternate ease-in-out;
+}
+
+@keyframes float-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(80px, 50px) scale(1.1); }
+}
+
+@keyframes float-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-100px, -60px) scale(1.15); }
+}
+
+@keyframes float-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-50px, 50px) scale(1.08); }
+}
+
+/* =========================================
+             CHECKOUT CARD BOX
+========================================= */
+.checkout-box {
     width: 100%;
-    max-width: 650px;
-
-    padding: 40px;
-
-    border-radius: 30px;
-
-    background: rgba(255,255,255,0.82);
-
-    backdrop-filter: blur(16px);
-
-    border: 1px solid rgba(255,255,255,0.5);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,0.08);
-
-    animation: fadeUp 0.7s ease;
+    max-width: 600px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 45px 40px;
+    border-radius: 28px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    z-index: 2;
+    position: relative;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeUp{
-
-    from{
+@keyframes fadeUp {
+    from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
     }
-
-    to{
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* =========================
-          HEADINGS
-========================= */
-
-.checkout-box h1{
+/* =========================================
+            HEADINGS & PRICING
+========================================= */
+.checkout-box h1 {
     text-align: center;
-
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 800;
-
-    margin-bottom: 12px;
-
-    color: #111827;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
 }
 
-.checkout-box h2{
+.checkout-box h2 {
     text-align: center;
-
-    font-size: 28px;
-    font-weight: 700;
-
-    margin-bottom: 40px;
-
-    background: linear-gradient(
-        90deg,
-        #00c853,
-        #00e676
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* =========================
-          SECTION
-========================= */
-
-.checkout-section{
-    margin-bottom: 32px;
-}
-
-.checkout-section h3{
     font-size: 22px;
-    font-weight: 700;
-
-    margin-bottom: 18px;
-
-    color: #111827;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 40px;
 }
 
-/* =========================
-          INPUTS
-========================= */
+.checkout-box h2 span {
+    color: #00ff99;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    margin-left: 6px;
+}
 
-.checkout-section input,
-.checkout-section textarea{
-    width: 100%;
+/* =========================================
+            CHECKOUT FORM SECTIONS
+========================================= */
+.checkout-section {
+    margin-bottom: 30px;
+}
 
-    padding: 16px 18px;
+.checkout-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 8px;
+}
 
-    border-radius: 16px;
-
-    border: 1px solid rgba(0,0,0,0.08);
-
-    background: rgba(255,255,255,0.8);
-
-    font-size: 15px;
-    font-family: inherit;
-
-    outline: none;
-
-    transition: all 0.35s ease;
-
+.checkout-input-group {
     margin-bottom: 16px;
 }
 
-.checkout-section input:focus,
-.checkout-section textarea:focus{
-    border-color: #00c853;
-
-    box-shadow:
-    0 0 0 4px rgba(0,200,83,0.12);
-
-    background: white;
+/* GRID LAYOUT FOR CITY & PINCODE */
+.checkout-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
-.checkout-section textarea{
-    min-height: 130px;
+/* INPUTS & TEXTAREAS */
+.checkout-section input,
+.checkout-section textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.5);
+    color: #f8fafc;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.checkout-section input::placeholder,
+.checkout-section textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.checkout-section input:hover,
+.checkout-section textarea:hover {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.checkout-section input:focus,
+.checkout-section textarea:focus {
+    border-color: #00ff99;
+    background: rgba(15, 23, 42, 0.8);
+    box-shadow: 
+        0 0 0 4px rgba(0, 255, 153, 0.12),
+        0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-section textarea {
+    min-height: 120px;
     resize: vertical;
 }
 
-/* =========================
-            BUTTON
-========================= */
-
-.place-order-btn{
+/* =========================================
+            SECURE ORDER BUTTON
+========================================= */
+.place-order-btn {
     width: 100%;
-
-    min-height: 56px;
-
+    min-height: 54px;
     border: none;
-    border-radius: 18px;
-
+    border-radius: 14px;
     cursor: pointer;
-
-    font-size: 18px;
-    font-weight: 700;
-
-    color: white;
-
-    background: linear-gradient(
-        135deg,
-        #00c853,
-        #00e676
-    );
-
-    transition: all 0.35s ease;
-
+    font-size: 17px;
+    font-weight: 750;
+    color: #0f172a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #00f58d 0%, #00b2fe 100%);
+    box-shadow: 0 4px 15px rgba(0, 245, 141, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-
-    box-shadow:
-    0 12px 30px rgba(0,200,83,0.25);
 }
 
-/* BUTTON SHINE */
-
-.place-order-btn::before{
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0.35),
-        transparent
-    );
-
-    transform: translateX(-100%);
-    transition: 0.5s;
+.order-btn-icon {
+    transition: transform 0.3s ease;
 }
 
-.place-order-btn:hover::before{
-    transform: translateX(100%);
+.place-order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 245, 141, 0.4);
+    filter: brightness(1.08);
 }
 
-.place-order-btn:hover{
-    transform: translateY(-4px);
-
-    box-shadow:
-    0 18px 35px rgba(0,200,83,0.35);
+.place-order-btn:hover .order-btn-icon {
+    transform: scale(1.15) translateY(-0.5px);
 }
 
-.place-order-btn:disabled{
-    background: gray;
+.place-order-btn:active {
+    transform: translateY(0);
+}
 
+.place-order-btn:disabled {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #475569;
     cursor: not-allowed;
-
+    transform: none;
     box-shadow: none;
 }
 
-/* =========================
-           LOADER
-========================= */
-
-.loader-box{
-    margin-top: 35px;
-
-    text-align: center;
+/* BUTTON LOADER STATE */
+.checkout-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #475569;
 }
 
-.loader-box h3{
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    font-size: 24px;
-
-    color: #111827;
-}
-
-.loader-box p{
-    color: #666;
-
-    font-size: 15px;
-}
-
-/* =========================
-           SPINNER
-========================= */
-
-.payment-spinner{
-    width: 70px;
-    height: 70px;
-
+.checkout-btn-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(15, 23, 42, 0.2);
+    border-top-color: #0f172a;
     border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
 
+/* =========================================
+          PROCESSING LOADER BOX
+========================================= */
+.loader-box {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 30px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.loader-box h3 {
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.loader-box p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* LOADER SPINNER */
+.payment-spinner {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
     margin: auto;
-
-    border: 6px solid rgba(0,0,0,0.08);
-
-    border-top: 6px solid #00c853;
-
+    border: 4px solid rgba(255, 255, 255, 0.05);
+    border-top: 4px solid #00ff99;
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin{
-
-    0%{
-        transform: rotate(0deg);
-    }
-
-    100%{
-        transform: rotate(360deg);
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* =========================
-           TABLET
-========================= */
-
-@media screen and (max-width: 768px){
-
-    .checkout-page{
+/* =========================================
+            TABLET
+========================================= */
+@media screen and (max-width: 768px) {
+    .checkout-page {
         padding: 40px 16px;
     }
 
-    .checkout-box{
-        padding: 30px;
+    .checkout-box {
+        padding: 35px 30px;
     }
 
-    .checkout-box h1{
-        font-size: 38px;
+    .checkout-box h1 {
+        font-size: 32px;
     }
 
-    .checkout-box h2{
-        font-size: 24px;
-    }
-
-    .checkout-section h3{
+    .checkout-box h2 {
         font-size: 20px;
     }
 
-    .place-order-btn{
+    .checkout-box h2 span {
+        font-size: 22px;
+    }
+
+    .checkout-section h3 {
         font-size: 16px;
     }
 }
 
-/* =========================
-           MOBILE
-========================= */
-
-@media screen and (max-width: 480px){
-
-    .checkout-box{
-        padding: 24px;
+/* =========================================
+            MOBILE
+========================================= */
+@media screen and (max-width: 480px) {
+    .checkout-box {
+        padding: 24px 20px;
         border-radius: 24px;
     }
 
-    .checkout-box h1{
-        font-size: 30px;
-    }
-
-    .checkout-box h2{
-        font-size: 22px;
-    }
-
-    .checkout-section input,
-    .checkout-section textarea{
-        font-size: 14px;
-
-        padding: 14px 16px;
-    }
-
-    .place-order-btn{
-        font-size: 15px;
-        min-height: 52px;
-    }
-
-    .loader-box h3{
-        font-size: 20px;
-    }
-}
-
-/* =========================
-        SMALL DEVICES
-========================= */
-
-@media screen and (max-width: 320px){
-
-    .checkout-box h1{
+    .checkout-box h1 {
         font-size: 26px;
     }
 
-    .checkout-box h2{
-        font-size: 20px;
-    }
-
-    .checkout-section h3{
+    .checkout-box h2 {
         font-size: 18px;
     }
 
-    .place-order-btn{
+    .checkout-box h2 span {
+        font-size: 20px;
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+
+    .checkout-input-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-section input,
+    .checkout-section textarea {
         font-size: 14px;
+        padding: 13px 15px;
+    }
+
+    .place-order-btn {
+        font-size: 15px;
+        min-height: 50px;
+    }
+
+    .loader-box h3 {
+        font-size: 18px;
     }
 }
